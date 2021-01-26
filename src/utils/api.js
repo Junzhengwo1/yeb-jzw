@@ -1,7 +1,23 @@
 import axios from "axios";
-import {Message} from "element-ui";
+import {Message} from "element-ui";//单独应用饿了吗的message组件
 import router from "../router";
 //专门api接口
+
+
+//请求拦截器
+axios.interceptors.request.use(config=>{
+    //拿到tokenStr 并判断 如果存在的话，就把我们的token放在请求头中
+    if(window.sessionStorage.getItem('tokenStr')){
+        config.headers['Authorization']=window.sessionStorage.getItem('tokenStr');
+
+    }
+    return config;
+
+}, error => {
+    console.log(error);
+});
+
+
 
 //响应拦截器
 //success表示成功访问到接口；只是说连接到了后端接口
@@ -9,11 +25,11 @@ axios.interceptors.response.use(success=>{
     //判断业务逻辑
     if(success.status && success.status==200){
         if(success.data.code==500||success.data.code==401||success.data.code==403){
-            Message.error({message:success.data.message});
+            Message.error({message: success.data.message});
             return;
         }
         if(success.data.message){
-            Message.success({message:success.data.message})
+            Message.success({message: success.data.message})
         }
     }
     return success.data;
@@ -36,16 +52,38 @@ axios.interceptors.response.use(success=>{
     return;
 });
 
-let base='';
-
-
+// let base='';// eslint-disable-line no-unused-vars
 
 //传送json格式的post请求
 export const postRequest=(url,params)=>{
     return axios({
-        method:'post',
-        url:'${base}${url}',
-        data:params
+        method: 'post',
+        url: url,
+        data: params
     })
-}
+};
 
+//其他格式的请求
+export const putRequest=(url,params)=>{
+    return axios({
+        method: 'put',
+        url: url,
+        data: params
+    })
+};
+
+export const getRequest=(url,params)=>{
+    return axios({
+        method: 'get',
+        url: url,
+        data: params
+    })
+};
+
+export const deleteRequest=(url,params)=>{
+    return axios({
+        method: 'delete',
+        url: url,
+        data: params
+    })
+};
