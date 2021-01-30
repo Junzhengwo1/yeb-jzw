@@ -3,19 +3,19 @@
         <el-container>
             <el-header class="homeHeader">
                 <div class="title">CloudOffice</div>
-
-                <el-dropdown class="userInfo">
-                    <span class="el-dropdown-link">
-                        {{user.name}}<i><img :src="user.userFace"></i>
+                <el-dropdown class="userInfo" @command="commandHandler">
+                    <span class="el-dropdown-link" style="color: white;font-family: 新宋体">
+                        {{user.name}}
+                        <i><img :src="user.userFace"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>个人中心</el-dropdown-item>
-                        <el-dropdown-item>设置</el-dropdown-item>
-                        <el-dropdown-item>注销登录</el-dropdown-item>
+                        <el-dropdown-item command="userinfo">个人中心</el-dropdown-item>
+                        <el-dropdown-item command="setting">账号设置</el-dropdown-item>
+                        <el-dropdown-item command="logout">注销登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
-
             </el-header>
+
             <el-container>
                 <el-aside width="200px">
                     <!--启用路由模式-->
@@ -59,11 +59,36 @@
                 user: JSON.parse(window.sessionStorage.getItem('user'))
             }
         },
-
         //计算属性
         computed:{
             routes(){
                 return this.$store.state.routes;
+            }
+        },
+        methods:{
+            commandHandler(command){
+                if(command=='logout'){
+                    this.$confirm('此操作将注销登录, 是否继续?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        //注销登录
+                        this.postRequest('/logout');
+                        //清空用户信息
+                        window.sessionStorage.removeItem('tokenStr');
+                        window.sessionStorage.removeItem('user');
+                        //清空一下vuex中的菜单
+                        this.$store.commit('initRoutes',[]);
+                        //跳转到登录页
+                        this.$router.replace('/');
+                    }).catch(() => {
+                        this.$message({
+                            type: 'info',
+                            message: '已取消操作'
+                        });
+                    });
+                }
             }
         }
     }
@@ -87,10 +112,12 @@
     .homeHeader .userInfo{
         cursor: pointer;
     }
+
     .el-dropdown-link img{
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         border-radius: 24px;
+        margin-left: 10px;
     }
 
 </style>

@@ -84,20 +84,22 @@
 </script>
 
 <style>
+
+
     .loginContainer{
         border-radius:15px;
         background-clip: padding-box;
         margin: 180px auto;
         width: 350px;
         padding: 15px 35px 15px 35px;
-        background: #ffff;
+        background: #580643;
         border: 1px solid #eaeaea;
         box-shadow: 0 0 25px #cac6c6;
     }
     .loginTitle {
         margin: 0 auto 40px auto;
         text-align: center;
-        color: #505458;
+        color: white;
     }
     .loginRemember{
         text-align: left;
