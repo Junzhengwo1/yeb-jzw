@@ -1,12 +1,12 @@
 <template>
     <div>
-        test2
+        工资表
     </div>
 </template>
 
 <script>
     export default {
-        name: "Test2"
+        name: "SalTable"
     }
 </script>
 
