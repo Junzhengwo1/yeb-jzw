@@ -38,14 +38,24 @@
                         </template>
                     </el-menu>
                 </el-aside>
-                <el-container>
+
                     <el-main>
+                        <el-breadcrumb v-if="this.$router.currentRoute.path!='/home'">
+                            <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                            <el-breadcrumb-item>{{this.$router.currentRoute.name}}</el-breadcrumb-item>
+                        </el-breadcrumb>
+                        <div class="homeWelcome" v-if="this.$router.currentRoute.path=='/home'">
+                            欢迎进入系统
+                        </div>
+
                         <router-view/>
 
                     </el-main>
-                    <el-footer>Footer</el-footer>
-                </el-container>
+
+
+
             </el-container>
+
         </el-container>
     </div>
 </template>
@@ -118,6 +128,14 @@
         height: 40px;
         border-radius: 24px;
         margin-left: 10px;
+    }
+
+    .homeWelcome{
+        text-align: center;
+        font-size: 30px;
+        font-family: 华文隶书;
+        color: #783008;
+        padding-top: 60px;
     }
 
 </style>
