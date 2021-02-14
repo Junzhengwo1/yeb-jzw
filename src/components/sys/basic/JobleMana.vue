@@ -1,12 +1,12 @@
 <template>
     <div>
-        Test
+        <h1 style="color: #580643">职称管理</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Test"
+        name: "JobleMana"
     }
 </script>
 

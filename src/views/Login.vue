@@ -69,7 +69,10 @@
                                //先处理一下我们的token 将token存在sessionStorage
                                const tokenStr=resp.object.tokenHead+resp.object.token;
                                window.sessionStorage.setItem('tokenStr',tokenStr);
-                               this.$router.replace('/home');
+
+                               //跳转首页
+                               let path=this.$route.query.redirect;
+                               this.$router.replace((path=='/'||path==undefined)? '/home':path);
                            }
 
                         })

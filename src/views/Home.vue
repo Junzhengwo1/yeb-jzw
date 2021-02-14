@@ -48,7 +48,7 @@
                             欢迎进入系统
                         </div>
 
-                        <router-view/>
+                        <router-view class="homeRouterView"/>
 
                     </el-main>
 
@@ -136,6 +136,10 @@
         font-family: 华文隶书;
         color: #783008;
         padding-top: 60px;
+    }
+
+    .homeRouterView{
+        margin-top: 10px;
     }
 
 </style>
