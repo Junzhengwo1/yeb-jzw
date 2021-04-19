@@ -69,7 +69,6 @@
                                //先处理一下我们的token 将token存在sessionStorage
                                const tokenStr=resp.object.tokenHead+resp.object.token;
                                window.sessionStorage.setItem('tokenStr',tokenStr);
-
                                //跳转首页
                                let path=this.$route.query.redirect;
                                this.$router.replace((path=='/'||path==undefined)? '/home':path);
@@ -87,8 +86,6 @@
 </script>
 
 <style>
-
-
     .loginContainer{
         border-radius:15px;
         background-clip: padding-box;

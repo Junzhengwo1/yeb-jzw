@@ -24,6 +24,7 @@ Vue.prototype.deleteRequest=deleteRequest;
 //router全局前置守卫
 router.beforeEach((to,from,next)=>{
 
+  //判断是否有tokenStr
   if(window.sessionStorage.getItem('tokenStr')){
     initMenu(router,store);
     if(!window.sessionStorage.getItem('user')){
@@ -38,9 +39,11 @@ router.beforeEach((to,from,next)=>{
     }
     next();
   }else {
+    //也就是说，必须要到登录页面
       if(to.path=='/'){
         next();
       }else {
+        //也就是去了sys/basic
         next('/?redirect='+to.path);
       }
 
