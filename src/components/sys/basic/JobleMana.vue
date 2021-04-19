@@ -120,7 +120,7 @@
 
 <script>
     export default {
-        name: "JoblevelMana",
+        name: "JobleMana",
         data() {
             return {
                 jl: {
