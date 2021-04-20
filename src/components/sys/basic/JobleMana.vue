@@ -1,7 +1,6 @@
 <template>
     <div>
         <div>
-            <h1 style="color: #580643">职位管理</h1>
             <el-input size="small" v-model="jl.name" style="width: 300px" prefix-icon="el-icon-plus"
                       placeholder="添加职称..."></el-input>
             <el-select v-model="jl.titleLevel" palaceholder="职称等级" size="small" style="margin-left: 6px;margin-right: 6px">
@@ -67,6 +66,7 @@
                 title="编辑职称"
                 :visible.sync="dialogVisible"
                 width="30%">
+
             <div>
                 <table>
                     <tr>
@@ -74,7 +74,7 @@
                             <el-tag>职称名</el-tag>
                         </td>
                         <td>
-                            <el-input v-model="updateJl.name" size="small"></el-input>
+                            <el-input style="margin-left: 6px" v-model="updateJl.name" size="small"></el-input>
                         </td>
                     </tr>
                     <tr>
@@ -100,6 +100,7 @@
                         </td>
                         <td>
                             <el-switch
+                                    style="margin-left: 7px"
                                     v-model="updateJl.enabled"
                                     activecolor="#13ce66"
                                     inactive-color="#ff4949"
@@ -110,10 +111,11 @@
                     </tr>
                 </table>
             </div>
+
             <span slot="footer" class="dialog-footer">
-        <el-button size="small" @click="dialogVisible = false">取 消</el-button>
-        <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
-      </span>
+                <el-button size="small" @click="dialogVisible = false">取 消</el-button>
+                <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
+            </span>
         </el-dialog>
     </div>
 </template>
@@ -139,7 +141,7 @@
                     '副高级',
                     '中级',
                     '初级',
-                    '员级',
+                    '员级'
                 ],
                 multipleSelection: []
             }
@@ -188,6 +190,7 @@
             },
             showEditView(data) {
                 Object.assign(this.updateJl, data);
+                this.updateJl.createDate='';
                 this.dialogVisible = true;
             },
             deleteHandler(data) {

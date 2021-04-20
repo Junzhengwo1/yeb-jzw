@@ -2,7 +2,6 @@
     <div>
 
         <div>
-            <h1 style="color: #580643" >职位管理</h1>
             <el-input
                     size="small"
                     class="addPosInput"
