@@ -25,7 +25,7 @@
         name: "SysBasic",
         data(){
             return{
-                activeName: 'JobleMana'
+                activeName: 'DepMana'
             }
         },
         components:{
