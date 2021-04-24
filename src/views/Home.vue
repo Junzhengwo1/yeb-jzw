@@ -17,7 +17,7 @@
             </el-header>
 
             <el-container>
-                <el-aside width="200px">
+                <el-aside width="150px">
                     <!--启用路由模式-->
                     <el-menu router unique-opened>
                         <template v-for="(item,index) in routes">

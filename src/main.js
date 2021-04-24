@@ -11,6 +11,7 @@ import {putRequest} from "./utils/api";
 import {getRequest} from "./utils/api";
 import {deleteRequest} from "./utils/api";
 import {initMenu} from "./utils/menus";
+import {downloadRequest} from "./utils/download";
 
 Vue.use(ElementUI,{size:'small'});
 Vue.config.productionTip = false;
@@ -19,6 +20,7 @@ Vue.prototype.postRequest=postRequest;
 Vue.prototype.putRequest=putRequest;
 Vue.prototype.getRequest=getRequest;
 Vue.prototype.deleteRequest=deleteRequest;
+Vue.prototype.downloadRequest=downloadRequest;
 
 
 //router全局前置守卫
