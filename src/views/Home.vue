@@ -4,8 +4,10 @@
             <el-header class="homeHeader">
                 <div class="title">CloudOffice</div>
                 <div>
-                    <el-button type="text" icon="el-icon-bell" type="text" size="normal"
-                               style="color: #3726cc;margin-right: 8px"
+                    <el-button icon="el-icon-bell"
+                               type="text"
+                               style="margin-right: 10px;color: #3726cc;"
+                               size="max"
                                @click="goChat"></el-button>
                     <el-dropdown class="userInfo" @command="commandHandler">
                     <span class="el-dropdown-link" style="color: white;font-family: 新宋体">

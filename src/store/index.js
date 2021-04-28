@@ -5,7 +5,7 @@ import {getRequest} from "../utils/api";
 Vue.use(VueX);
 
 
-const now=new Date();
+// const now=new Date();
 
 const store=new VueX.Store({
     state:{

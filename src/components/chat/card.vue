@@ -36,7 +36,7 @@ export default {
   	font-size: 16px;
   }
   .search {
-  	background: #26292E;
+  	background: #584040;
   	height: 30px;
   	line-height: 30px;
   	padding: 0 10px;
