@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 #card {
 	padding: 12px;
+
   .avatar{
   	width: 40px;
   	height: 40px;

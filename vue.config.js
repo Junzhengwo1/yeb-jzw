@@ -14,6 +14,11 @@ proxyObj['/']={
     }
 };
 
+//发送消息的代理
+proxyObj['/ws']={
+    ws:true,
+    target: 'ws://localhost:8081'
+};
 
 
 module.exports={
@@ -21,7 +26,6 @@ module.exports={
         host:'localhost',
         port:'8080',
         proxy:proxyObj
-    }
-
+    },
 
 };

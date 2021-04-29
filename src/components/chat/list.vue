@@ -1,7 +1,8 @@
 <template>
   <div id="list">
   	<ul style="padding-left: 0px">
-  		<li v-for="item in admins" :class="{ active: item.id === currentSessionId }" v-on:click="changeCurrentSessionId(item.id)"><!--   :class="[item.id === currentSessionId ? 'active':'']" -->
+  		<li v-for="item in admins" v-bind:key="item" :class="{ active: item.id === currentSessionId }"
+			v-on:click="changeCurrentSessionId(item.id)">
   			<img class="avatar" :src="item.userFace" :alt="item.name">
   			<p class="name">{{item.name}}</p>
   		</li>
@@ -20,9 +21,8 @@ export default {
     }
   },
   computed: mapState([
-  'sessions',
-  'admins',
-  'currentSessionId'
+		  'admins',
+		  'currentSessionId'
 	]),
   methods:{
   	changeCurrentSessionId:function (id) {
@@ -54,6 +54,7 @@ export default {
 	.name {
 		display: inline-block;
 		margin-left: 15px;
+		font-size: small;
 	}
 }
 </style>

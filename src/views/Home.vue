@@ -6,7 +6,7 @@
                 <div>
                     <el-button icon="el-icon-bell"
                                type="text"
-                               style="margin-right: 10px;color: #3726cc;"
+                               style="margin-right: 10px;color: #efff02;"
                                size="max"
                                @click="goChat"></el-button>
                     <el-dropdown class="userInfo" @command="commandHandler">
