@@ -13,6 +13,8 @@ export const initMenu=(router,store)=>{
             router.addRoutes(fmtRoutes);
             //将数据存入vuex中
             store.commit('initRoutes',fmtRoutes);
+            //路由守卫实时监控websockt的连接
+            store.dispatch('connect');
         }
     })
 };

@@ -1,16 +1,20 @@
 <template>
-  <div id="message" v-scroll-bottom="session">
-  	<ul v-if="currentSessionId==item.id" v-for="item in sessions">
-  		<li v-for="entry in item.messages">
-  			<p class="time">
-  				<span>{{entry.date | time}}</span>
-  			</p>
-  			<div class="main" :class="{self:entry.self}">
-  				<img class="avatar" :src="entry.self ? img : item.user.img" alt="">
-  				<p class="text">{{entry.content}}</p>
-  			</div>
-  		</li>
-  	</ul>
+  <div id="message" v-scroll-bottom="sessions">
+	  <template  v-for="item in sessions">
+		  <ul v-bind:key="item" v-if="currentSessionId==item.id" >
+			  <template v-for="entry in item.messages">
+				  <li  v-bind:key="entry">
+					  <p v-bind="entry" class="time">
+						  <span>{{entry.date | time}}</span>
+					  </p>
+					  <div class="main" :class="{self:entry.self}">
+						  <img class="avatar" :src="entry.self ? img : item.user.img" alt="">
+						  <p class="text">{{entry.content}}</p>
+					  </div>
+				  </li>
+			  </template>
+		  </ul>
+	  </template>
   </div>
 </template>
 

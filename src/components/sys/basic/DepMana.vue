@@ -45,14 +45,14 @@
                         <td>
                             <el-tag>上级部门</el-tag>
                         </td>
-                        <td>{{pname}}</td>
+                        <td style="margin-left: 4px">{{pname}}</td>
                     </tr>
                     <tr>
                         <td>
                             <el-tag size="small">部门名称</el-tag>
                         </td>
                         <td>
-                            <el-input size="small" v-model="dep.name" placeholder="请输入部门名称......"></el-input>
+                            <el-input size="mini" style="margin-left: 4px" v-model="dep.name" placeholder="请输入部门名称......"></el-input>
                         </td>
                     </tr>
 

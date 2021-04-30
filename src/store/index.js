@@ -54,9 +54,16 @@ const store = new VueX.Store({
             //连接后端
             context.state.stomp=Stomp.over(new SockJS('/ws/ep'));
             //获取token
-            let token=Window.sessionStorage.getItem('tokenStr');
+            let token=sessionStorage.getItem('tokenStr');
             //做个标记
-            context.state.stomp.connect({'Auth-Token':token},)
+            context.state.stomp.connect({'Auth-Token':token},success=> {
+                //订阅消息
+                context.state.stomp.subscribe('user/queue/chat',msg=>{
+                    console.log(msg,body);
+                })
+            },error=>{
+
+            })
         },
         initData(context) {
             getRequest('/chat/admin').then(resp => {

@@ -4,7 +4,8 @@ import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.css';
+import axios from "axios";
 
 import {postRequest} from "./utils/api";
 import {putRequest} from "./utils/api";
@@ -13,6 +14,8 @@ import {deleteRequest} from "./utils/api";
 import {initMenu} from "./utils/menus";
 import {downloadRequest} from "./utils/download";
 
+Vue.use(axios);
+Vue.prototype.$http = axios;
 Vue.use(ElementUI,{size:'small'});
 Vue.config.productionTip = false;
 

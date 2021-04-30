@@ -17,8 +17,11 @@ export default {
   methods: {
   	addMessage (e) {
   		if (e.ctrlKey && e.keyCode ===13 && this.content.length) {
-  			this.$store.commit('addMessage',this.content);
-  			this.content='';
+  			// this.$store.commit('addMessage',this.content);
+  			// this.content='';
+          let msgObj=new Object();
+
+
   		}
   	}
   }
