@@ -14,7 +14,7 @@
                             @keydown.enter.native="initEmps"
                             placeholder="请输入员工名搜索...">
                     </el-input>
-                    <el-button type="primary" icon="el-icon-search" :disabled="showAdvanceSearchVisible">搜索</el-button>
+                    <el-button type="primary" icon="el-icon-search" :disabled="showAdvanceSearchVisible">回车</el-button>
                     <el-button type="primary"
                                @click="showAdvanceSearchVisible=!showAdvanceSearchVisible">
                         <i :class="showAdvanceSearchVisible?'fa fa-angle-double-up':'fa fa-angle-double-down'" aria-hidden="true"></i>
@@ -305,15 +305,15 @@
                 </el-table-column>
                 <el-table-column
                         fixed="right"
-                        width="200"
+                        width="120"
                         label="操作">
                     <template slot-scope="scope">
                         <el-button style="padding: 3px" size="mini"
                                    @click="showEditEmpView(scope.row)">编辑
                         </el-button>
-                        <el-button style="padding: 3px" size="mini"
-                                   type="primary">查看高级资料
-                        </el-button>
+<!--                        <el-button style="padding: 3px" size="mini"-->
+<!--                                   type="primary">查看高级资料-->
+<!--                        </el-button>-->
                         <el-button style="padding: 3px" size="mini"
                                    type="danger" @click="deleteEmp(scope.row)">删除
                         </el-button>

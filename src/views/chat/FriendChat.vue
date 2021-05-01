@@ -2,20 +2,12 @@
   <!--在线聊天 导入的是第三方的组件-->
   <div id="friendChat">
     <div class="sidebar">
-      <card>
-
-      </card>
-      <list>
-
-      </list>
+      <card></card>
+      <list></list>
     </div>
     <div class="main">
-      <message>
-
-      </message>
-      <usertext>
-
-      </usertext>
+      <message></message>
+      <usertext></usertext>
     </div>
   </div>
 

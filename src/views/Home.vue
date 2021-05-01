@@ -87,7 +87,10 @@
                 this.$router.push('/chat');
             },
             commandHandler(command){
-                if(command=='logout'){
+                if(command==='userinfo'){
+                    this.$router.push('/userinfo');
+                }
+                if(command==='logout'){
                     this.$confirm('此操作将注销登录, 是否继续?', '提示', {
                         confirmButtonText: '确定',
                         cancelButtonText: '取消',
@@ -109,6 +112,7 @@
                         });
                     });
                 }
+
             }
         }
     }

@@ -1,9 +1,10 @@
 import axios from "axios";
 import {Message} from "element-ui";//单独应用饿了吗的message组件
 import router from "../router";
+import Vue from "vue";
 //专门api接口
 
-
+Vue.prototype.axios = axios;
 //请求拦截器
 axios.interceptors.request.use(config=>{
     //拿到tokenStr 并判断 如果存在的话，就把我们的token放在请求头中

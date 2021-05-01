@@ -1,8 +1,8 @@
 <template>
   <div id="list">
   	<ul style="padding-left: 0px">
-  		<li v-for="item in admins" v-bind:key="item" :class="{ active: item.id === currentSessionId }"
-			v-on:click="changeCurrentSessionId(item.id)">
+  		<li v-for="item in admins" v-bind:key="item" :class="{ active: currentSession ? item.username === currentSession:false}"
+			v-on:click="changecurrentSession(item)">
   			<img class="avatar" :src="item.userFace" :alt="item.name">
   			<p class="name">{{item.name}}</p>
   		</li>
@@ -22,11 +22,11 @@ export default {
   },
   computed: mapState([
 		  'admins',
-		  'currentSessionId'
+		  'currentSession'
 	]),
   methods:{
-  	changeCurrentSessionId:function (id) {
-  		this.$store.commit('changeCurrentSessionId',id)
+  	changecurrentSession:function (currentSession) {
+  		this.$store.commit('changecurrentSession',currentSession)
   	}
   }
 }
@@ -39,11 +39,11 @@ export default {
 		border-bottom: 1px solid #292C33;
 		cursor: pointer;
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.03);
+			background-color: rgba(239, 255, 2, 0.38);
 		}
 	}
   li.active {/*注意这个是.不是冒号:*/
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: rgba(239, 255, 2, 0.59);
 	}
 	.avatar {
 		border-radius: 2px;
