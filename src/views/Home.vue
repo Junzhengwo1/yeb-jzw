@@ -16,7 +16,7 @@
                     </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item command="userinfo">个人中心</el-dropdown-item>
-                            <el-dropdown-item command="setting">账号设置</el-dropdown-item>
+<!--                            <el-dropdown-item command="setting">账号设置</el-dropdown-item>-->
                             <el-dropdown-item command="logout">注销登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
