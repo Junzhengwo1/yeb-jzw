@@ -16,7 +16,7 @@
                     </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item command="userinfo">个人中心</el-dropdown-item>
-                            <el-dropdown-item command="setting">账号设置</el-dropdown-item>
+<!--                            <el-dropdown-item command="setting">账号设置</el-dropdown-item>-->
                             <el-dropdown-item command="logout">注销登录</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
@@ -59,7 +59,6 @@
                         </div>
                         <router-view class="homeRouterView"/>
                     </el-main>
-
             </el-container>
 
         </el-container>
@@ -152,7 +151,7 @@
         font-size: 30px;
         font-family: 华文隶书;
         color: #783008;
-        padding-top: 60px;
+        padding-top: 0px;
     }
 
     .homeRouterView{
