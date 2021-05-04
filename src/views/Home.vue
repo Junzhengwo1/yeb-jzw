@@ -52,14 +52,13 @@
                             <el-breadcrumb-item>{{this.$router.currentRoute.name}}</el-breadcrumb-item>
                         </el-breadcrumb>
                         <div class="homeWelcome" v-if="this.$router.currentRoute.path=='/home'">
-                            欢迎进入系统
+                            <section class="content-header" style="z-index: 1; position: absolute ;top: 200px ;left: 50%;"  >
+                                <h1>欢迎进入系统</h1>
+                            </section>
+                            <img src="../assets/main.jpeg" style="width: 100%;height: 100%"  />
                         </div>
-
                         <router-view class="homeRouterView"/>
-
                     </el-main>
-
-
 
             </el-container>
 
