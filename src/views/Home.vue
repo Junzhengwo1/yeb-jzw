@@ -73,14 +73,18 @@
         //拿到登录后的用户信息
         data(){
             return{
-                user: JSON.parse(window.sessionStorage.getItem('user'))
+                // user: JSON.parse(window.sessionStorage.getItem('user'))
             }
         },
         //计算属性
         computed:{
             routes(){
                 return this.$store.state.routes;
+            },
+            user(){
+                return this.$store.state.currentAdmin;
             }
+
         },
         methods:{
             goChat(){

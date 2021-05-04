@@ -197,6 +197,6 @@
     }
     .userInfo-container{
         font-size: 12px;
-        color: #3726cc;
+        color: #783008;
     }
 </style>

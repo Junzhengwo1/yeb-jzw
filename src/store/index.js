@@ -23,6 +23,10 @@ const store = new VueX.Store({
     },
 
     mutations: {
+        //这个方法用户保证在更新用户昵称的时候，登录时的昵称随之变化
+        INIT_ADMIN(state,admin){
+            state.currentAdmin=admin;
+        },
         initRoutes(state, data) {
             state.routes = data;
         },
